@@ -1,6 +1,7 @@
-import {createElement, Component, PropTypes, findDOMNode} from 'rax';
+import {createElement, Component} from 'rax';
 import {isWeex} from 'universal-env';
 import * as Gcanvas from 'gcanvas.js';
+import findDOMNode from 'rax-find-dom-node';
 
 class Canvas extends Component {
   getContext = (type = '2d') => {
