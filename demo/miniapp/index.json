@@ -1,6 +1,6 @@
 {
   "defaultTitle": "小程序Rax scrollview 组件",
   "usingComponents": {
-    "rax-recyclerview": "../../src/miniapp/index"
+    "rax-canvas": "../../src/miniapp/index"
   }
 }

@@ -1,10 +1,3 @@
-<rax-recyclerview 
-className="testClass" 
-style="height:300rpx;width:300rpx;background:red" 
-onScroll="onScroll"
-onEndReached="onEndReached"
-endReachedThreshold="10">
-    <view style="height:1000rpx;width:300rpx;background:green">
-      asdf
-    </view>
-</rax-recyclerview >
+<rax-canvas id="canvas" className="testClass" onClick="onClick" style="background:red" animation="{{animationInfo}}">
+    i am in parent
+</rax-canvas>
