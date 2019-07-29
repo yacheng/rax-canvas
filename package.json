@@ -1,6 +1,6 @@
 {
   "name": "rax-canvas",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "canvas for Rax.",
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "gcanvas.js": "^0.0.7",
-    "universal-env": "^0.6.5",
+    "universal-env": "^1.0.0",
     "rax-find-dom-node": "^1.0.0"
   },
   "peerDependencies": {
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@rax-types/rax": "^1.0.5",
     "@types/ali-app": "^1.0.0",
-    "driver-universal": "^1.0.0-beta.2",
+    "driver-universal": "^1.0.0",
     "@types/jest": "^24.0.12",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",

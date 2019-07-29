@@ -5,7 +5,7 @@ import DU from "driver-universal"
 class CanvasSample extends Component {
   constructor(props) {
     super(props);
-    this.raxCanvasDemo = createRef()
+    this.raxCanvasDemo = createRef();
   }
   componentDidMount() {
     const context = this.raxCanvasDemo.current.getContext();
