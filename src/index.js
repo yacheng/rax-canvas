@@ -1,13 +1,13 @@
-import {createElement, Component,createRef} from 'rax';
+import {createElement, Component, createRef} from 'rax';
 import {isWeex} from 'universal-env';
 import { enable, WeexBridge, Image as GImage } from 'gcanvas.js';
 
 import findDOMNode from 'rax-find-dom-node';
 
 class Canvas extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.canvas = createRef()
+    this.canvas = createRef();
   }
   getContext = (type = '2d') => {
     const canvas = findDOMNode(this.canvas.current);
@@ -32,7 +32,7 @@ class Canvas extends Component {
 
 Canvas.createImage = () => {
   if (isWeex) {
-    return new Gcanvas.Image();
+    return new GImage();
   } else {
     return new Image();
   }

@@ -6,9 +6,9 @@ Component({
   props: {
     className: '',
     style: '',
-    id:'',
-    width:"600",
-    height:"600",
+    id: '',
+    width: '600',
+    height: '600',
     onClick: (e) => {},
     onLongpress: (e) => {},
     onAppear: (e) => {},
