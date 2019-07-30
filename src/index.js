@@ -1,20 +1,21 @@
-import {createElement, Component, PropTypes, findDOMNode} from 'rax';
+import {createElement, Component, createRef} from 'rax';
 import {isWeex} from 'universal-env';
-import * as Gcanvas from 'gcanvas.js';
+import { enable, WeexBridge, Image as GImage } from 'gcanvas.js';
+
+import findDOMNode from 'rax-find-dom-node';
 
 class Canvas extends Component {
+  constructor(props) {
+    super(props);
+    this.canvas = createRef();
+  }
   getContext = (type = '2d') => {
-    const canvas = findDOMNode(this.refs.canvas);
+    const canvas = findDOMNode(this.canvas.current);
     if (isWeex) {
-      this._canvasHolder = Gcanvas.enable(this.refs.canvas, {bridge: Gcanvas.WeexBridge});
-      return this._canvasHolder.getContext(type);
+      const gcanvas = enable(canvas, { bridge: WeexBridge, debug: false, disableAutoSwap: false, disableComboCommands: false });
+      return gcanvas.getContext(type);
     } else {
-      if (canvas && canvas.getContext) {
-        const context = canvas.getContext(type);
-        context.render = () => {
-        };
-        return context;
-      }
+      return canvas.getContext(type);
     }
   };
 
@@ -22,16 +23,16 @@ class Canvas extends Component {
     const {style = {}} = this.props;
 
     if (isWeex) {
-      return <gcanvas {...this.props} ref="canvas" />;
+      return <gcanvas {...this.props} ref={this.canvas} />;
     } else {
-      return <canvas {...this.props} width={style.width} height={style.height} ref="canvas" />;
+      return <canvas {...this.props} width={style.width} height={style.height} ref={this.canvas} />;
     }
   }
 }
 
 Canvas.createImage = () => {
   if (isWeex) {
-    return new Gcanvas.Image();
+    return new GImage();
   } else {
     return new Image();
   }
