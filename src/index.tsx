@@ -1,4 +1,4 @@
-import {createElement, Component, createRef, RefAttributes, HTMLAttributes} from 'rax';
+import {createElement, Component, createRef, HTMLAttributes} from 'rax';
 import {isWeex} from 'universal-env';
 import { enable, WeexBridge, Image as GImage } from 'gcanvas.js';
 import findDOMNode from 'rax-find-dom-node';
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-export type CanvasProps = RefAttributes<HTMLCanvasElement> & HTMLAttributes<HTMLCanvasElement>;
+export type CanvasProps = HTMLAttributes<HTMLCanvasElement>;
 
 class Canvas extends Component<CanvasProps, any> {
   private canvas: any = createRef();
